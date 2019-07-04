@@ -1,12 +1,9 @@
 package ru.terrakok.cicerone;
 
 /**
- * Screen is class for description application screen.
+ * Screen is an interface for description application screen.
  */
-public abstract class Screen {
-    protected String screenKey = getClass().getCanonicalName();
+public interface Screen {
 
-    public String getScreenKey() {
-        return screenKey;
-    }
+    public String getScreenKey();
 }
