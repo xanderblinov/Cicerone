@@ -12,19 +12,9 @@ import ru.terrakok.cicerone.Screen;
  * Behavior in the case when no needed screens found depends on an implementation of the {@link Navigator}.
  * But the recommended behavior is to return to the root.
  */
-public class BackTo implements Command {
-    private Screen screen;
+public class BackTo extends ScreenCommand {
 
-    /**
-     * Creates a {@link BackTo} navigation command.
-     *
-     * @param screen screen
-     */
-    public BackTo(Screen screen) {
-        this.screen = screen;
-    }
-
-    public Screen getScreen() {
-        return screen;
+    public BackTo(final Screen screen) {
+        super(screen);
     }
 }

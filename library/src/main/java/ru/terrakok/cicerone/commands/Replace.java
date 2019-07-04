@@ -9,19 +9,9 @@ import ru.terrakok.cicerone.Screen;
 /**
  * Replaces the current screen.
  */
-public class Replace implements Command {
-    private Screen screen;
+public class Replace extends ScreenCommand{
 
-    /**
-     * Creates a {@link Replace} navigation command.
-     *
-     * @param screen screen
-     */
-    public Replace(Screen screen) {
-        this.screen = screen;
-    }
-
-    public Screen getScreen() {
-        return screen;
+    public Replace(final Screen screen) {
+        super(screen);
     }
 }
