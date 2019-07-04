@@ -12,12 +12,12 @@ dependencies {
 
 ext {
     // This params is for the library uploading to the Bintray
-    bintrayRepo = 'terramaven'
+    bintrayRepo = 'maven'
     bintrayName = 'cicerone'
     publishedGroupId = 'ru.terrakok.cicerone'
     artifact = 'cicerone'
-    libraryVersion = '4.0.2'
-    gitUrl = 'https://github.com/terrakok/Cicerone'
+    libraryVersion = '4.1'
+    gitUrl = 'https://github.com/xanderblinov/Cicerone'
     allLicenses = ['MIT']
 }
 
