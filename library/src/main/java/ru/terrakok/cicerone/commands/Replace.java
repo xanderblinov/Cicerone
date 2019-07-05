@@ -9,9 +9,17 @@ import ru.terrakok.cicerone.Screen;
 /**
  * Replaces the current screen.
  */
-public class Replace extends ScreenCommand{
+public class Replace implements ScreenCommand {
+
+    private Screen screen;
 
     public Replace(final Screen screen) {
-        super(screen);
+        super();
+        this.screen = screen;
+    }
+
+    @Override
+    public Screen getScreen() {
+        return screen;
     }
 }
