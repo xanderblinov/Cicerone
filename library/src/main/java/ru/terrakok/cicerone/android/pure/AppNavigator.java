@@ -115,11 +115,11 @@ public class AppNavigator implements Navigator {
             fragmentManager.popBackStack();
             localStackCopy.removeLast();
         } else {
-            activityBack();
+            exit();
         }
     }
 
-    protected void activityBack() {
+    protected void exit() {
         activity.finish();
     }
 
@@ -178,6 +178,7 @@ public class AppNavigator implements Navigator {
 
     /**
      * Performs {@link BackTo} command transition
+     * @param command to return
      */
     protected void backTo(BackTo command) {
         if (command.getScreen() == null) {

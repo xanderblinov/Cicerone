@@ -18,16 +18,18 @@ import ru.terrakok.cicerone.commands.Forward;
 import ru.terrakok.cicerone.commands.Replace;
 
 /**
- * Navigator implementation for launch fragments and activities.<br>
- * Feature {@link BackTo} works only for fragments.<br>
- * Recommendation: most useful for Single-Activity application.
+ * Navigator implementation for launch fragments and activities.<br> Feature {@link BackTo} works only for
+ * fragments.<br> Recommendation: most useful for Single-Activity application.
  */
 public class SupportAppNavigator implements Navigator {
 
-    private final Activity activity;
-    private final FragmentManager fragmentManager;
-    private final int containerId;
-    private LinkedList<String> localStackCopy;
+    protected final Activity activity;
+
+    protected final FragmentManager fragmentManager;
+
+    protected final int containerId;
+
+    protected LinkedList<String> localStackCopy;
 
     public SupportAppNavigator(FragmentActivity activity, int containerId) {
         this(activity, activity.getSupportFragmentManager(), containerId);
@@ -179,6 +181,8 @@ public class SupportAppNavigator implements Navigator {
 
     /**
      * Performs {@link BackTo} command transition
+     *
+     * @param command to return
      */
     protected void backTo(BackTo command) {
         if (command.getScreen() == null) {
@@ -205,19 +209,19 @@ public class SupportAppNavigator implements Navigator {
     }
 
     /**
-     * Override this method to setup fragment transaction {@link FragmentTransaction}.
-     * For example: setCustomAnimations(...), addSharedElement(...) or setReorderingAllowed(...)
+     * Override this method to setup fragment transaction {@link FragmentTransaction}. For example:
+     * setCustomAnimations(...), addSharedElement(...) or setReorderingAllowed(...)
      *
      * @param command             current navigation command. Will be only {@link Forward} or {@link Replace}
-     * @param currentFragment     current fragment in container
-     *                            (for {@link Replace} command it will be screen previous in new chain, NOT replaced screen)
+     * @param currentFragment     current fragment in container (for {@link Replace} command it will be screen previous
+     *                            in new chain, NOT replaced screen)
      * @param nextFragment        next screen fragment
      * @param fragmentTransaction fragment transaction
      */
     protected void setupFragmentTransaction(Command command,
-                                            Fragment currentFragment,
-                                            Fragment nextFragment,
-                                            FragmentTransaction fragmentTransaction) {
+            Fragment currentFragment,
+            Fragment nextFragment,
+            FragmentTransaction fragmentTransaction) {
     }
 
     /**
@@ -266,8 +270,7 @@ public class SupportAppNavigator implements Navigator {
     }
 
     /**
-     * Called when we tried to fragmentBack to some specific screen (via {@link BackTo} command),
-     * but didn't found it.
+     * Called when we tried to fragmentBack to some specific screen (via {@link BackTo} command), but didn't found it.
      *
      * @param screen screen
      */
