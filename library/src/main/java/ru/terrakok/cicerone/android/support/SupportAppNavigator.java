@@ -116,11 +116,11 @@ public class SupportAppNavigator implements Navigator {
             fragmentManager.popBackStack();
             localStackCopy.removeLast();
         } else {
-            activityBack();
+            exit();
         }
     }
 
-    protected void activityBack() {
+    protected void exit() {
         activity.finish();
     }
 
