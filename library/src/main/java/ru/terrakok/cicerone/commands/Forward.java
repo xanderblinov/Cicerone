@@ -15,6 +15,7 @@ public class Forward implements ScreenCommand {
 
     public Forward(final Screen screen) {
         super();
+        this.screen = screen;
     }
 
     @Override
