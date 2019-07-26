@@ -2,6 +2,11 @@
 [![jCenter](https://api.bintray.com/packages/terrakok/terramaven/cicerone/images/download.svg)](https://bintray.com/terrakok/terramaven/cicerone/_latestVersion)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
 
+
+## HH Mainainer
+Alexander Blinov (@xanderblinov)
+
+## Info about
 [![Join the chat at https://gitter.im/terrakok/Cicerone](https://img.shields.io/badge/Gitter-Join%20Chat-brightred.svg?style=flat)](https://gitter.im/terrakok/Cicerone)  
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Cicerone-green.svg?style=true)](https://android-arsenal.com/details/1/4700)
@@ -156,9 +161,9 @@ Or look at [GitFox (Android GitLab client)](https://gitlab.com/terrakok/gitlab-c
 ![](https://github.com/terrakok/Cicerone/raw/develop/media/insta_tabs.gif)
 ![](https://github.com/terrakok/Cicerone/raw/develop/media/animations.gif)
 
-## Participants
-+ idea and code - Konstantin Tskhovrebov (@terrakok)
-+ architecture advice, documentation and publication - Vasili Chyrvon (@Jeevuz)
+## External Participants
++ idea and code of original version - Konstantin Tskhovrebov (@terrakok)
++ architecture advice, documentation and publication of original version - Vasili Chyrvon (@Jeevuz)
 
 ## License
 ```
