@@ -4,17 +4,13 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
-import com.arellomobile.mvp.MvpAppCompatActivity;
-import com.arellomobile.mvp.presenter.InjectPresenter;
-import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-
 import java.util.List;
-
 import javax.inject.Inject;
-
+import moxy.MvpAppCompatActivity;
+import moxy.presenter.InjectPresenter;
+import moxy.presenter.ProvidePresenter;
 import ru.terrakok.cicerone.Router;
 import ru.terrakok.cicerone.sample.R;
 import ru.terrakok.cicerone.sample.SampleApplication;
@@ -59,10 +55,10 @@ public class BottomNavigationActivity extends MvpAppCompatActivity
 
     private void initViews() {
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.ic_android_white_24dp, R.string.tab_android))
-                .addItem(new BottomNavigationItem(R.drawable.ic_bug_report_white_24dp, R.string.tab_bug))
-                .addItem(new BottomNavigationItem(R.drawable.ic_pets_white_24dp, R.string.tab_dog))
-                .initialise();
+            .addItem(new BottomNavigationItem(R.drawable.ic_android_white_24dp, R.string.tab_android))
+            .addItem(new BottomNavigationItem(R.drawable.ic_bug_report_white_24dp, R.string.tab_bug))
+            .addItem(new BottomNavigationItem(R.drawable.ic_pets_white_24dp, R.string.tab_dog))
+            .initialise();
         bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position) {
@@ -90,7 +86,6 @@ public class BottomNavigationActivity extends MvpAppCompatActivity
                 onTabSelected(position);
             }
         });
-
     }
 
     private void selectTab(String tab) {
@@ -138,8 +133,8 @@ public class BottomNavigationActivity extends MvpAppCompatActivity
             }
         }
         if (fragment != null
-                && fragment instanceof BackButtonListener
-                && ((BackButtonListener) fragment).onBackPressed()) {
+            && fragment instanceof BackButtonListener
+            && ((BackButtonListener) fragment).onBackPressed()) {
             return;
         } else {
             presenter.onBackPressed();

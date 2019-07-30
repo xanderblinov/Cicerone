@@ -2,15 +2,12 @@ package ru.terrakok.cicerone.sample.mvp.main;
 
 import android.os.Handler;
 import android.os.Looper;
-
-import com.arellomobile.mvp.InjectViewState;
-import com.arellomobile.mvp.MvpPresenter;
-
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-
+import moxy.InjectViewState;
+import moxy.MvpPresenter;
 import ru.terrakok.cicerone.Router;
 import ru.terrakok.cicerone.sample.Screens;
 
@@ -48,9 +45,9 @@ public class SamplePresenter extends MvpPresenter<SampleView> {
 
     public void onNewChainCommandClick() {
         router.newChain(
-                new Screens.SampleScreen(screenNumber + 1),
-                new Screens.SampleScreen(screenNumber + 2),
-                new Screens.SampleScreen(screenNumber + 3)
+            new Screens.SampleScreen(screenNumber + 1),
+            new Screens.SampleScreen(screenNumber + 2),
+            new Screens.SampleScreen(screenNumber + 3)
         );
     }
 
@@ -69,12 +66,12 @@ public class SamplePresenter extends MvpPresenter<SampleView> {
             public void run() {
                 //WARNING! Navigation must be only in UI thread.
                 new Handler(Looper.getMainLooper()).post(
-                        new Runnable() {
-                            @Override
-                            public void run() {
-                                router.navigateTo(new Screens.SampleScreen(screenNumber + 1));
-                            }
+                    new Runnable() {
+                        @Override
+                        public void run() {
+                            router.navigateTo(new Screens.SampleScreen(screenNumber + 1));
                         }
+                    }
                 );
             }
         }, 5, TimeUnit.SECONDS);

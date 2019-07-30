@@ -28,15 +28,16 @@ public class Cicerone<T extends BaseRouter> {
     }
 
     /**
-     * Creates the Cicerone instance with the default {@link Router router}
+     * @return instance with the default {@link Router router}
      */
     public static Cicerone<Router> create() {
         return create(new Router());
     }
 
     /**
-     * Creates the Cicerone instance with the custom router.
      * @param customRouter the custom router extending {@link BaseRouter}
+     * @param <T> type of router
+     * @return  Cicerone instance with the custom router.
      */
     public static <T extends BaseRouter> Cicerone<T> create(T customRouter) {
         return new Cicerone<>(customRouter);

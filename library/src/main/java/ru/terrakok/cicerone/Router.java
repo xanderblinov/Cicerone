@@ -68,7 +68,7 @@ public class Router extends BaseRouter {
 
     /**
      * Opens several screens inside single transaction.
-     * @param screens
+     * @param screens to open.
      */
     public void newChain(Screen... screens) {
         Command[] commands = new Command[screens.length];
@@ -80,7 +80,7 @@ public class Router extends BaseRouter {
 
     /**
      * Clear current stack and open several screens inside single transaction.
-     * @param screens
+     * @param screens to open
      */
     public void newRootChain(Screen... screens) {
         Command[] commands = new Command[screens.length + 1];

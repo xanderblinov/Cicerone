@@ -8,23 +8,21 @@ import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.Screen;
 
 /**
- * Rolls fragmentBack to the needed screen from the screens chain.
- * Behavior in the case when no needed screens found depends on an implementation of the {@link Navigator}.
- * But the recommended behavior is to return to the root.
+ * Rolls fragmentBack to the needed screen from the screens chain. Behavior in the case when no needed screens found
+ * depends on an implementation of the {@link Navigator}. But the recommended behavior is to return to the root.
  */
-public class BackTo implements Command {
+public class BackTo implements ScreenCommand {
+
     private Screen screen;
 
-    /**
-     * Creates a {@link BackTo} navigation command.
-     *
-     * @param screen screen
-     */
-    public BackTo(Screen screen) {
+    public BackTo(final Screen screen) {
+        super();
         this.screen = screen;
     }
 
+    @Override
     public Screen getScreen() {
         return screen;
     }
 }
+

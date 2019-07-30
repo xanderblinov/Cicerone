@@ -5,13 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import com.arellomobile.mvp.MvpAppCompatFragment;
-import com.arellomobile.mvp.presenter.InjectPresenter;
-import com.arellomobile.mvp.presenter.ProvidePresenter;
-
+import moxy.MvpAppCompatFragment;
+import moxy.presenter.InjectPresenter;
+import moxy.presenter.ProvidePresenter;
 import ru.terrakok.cicerone.sample.R;
 import ru.terrakok.cicerone.sample.mvp.bottom.forward.ForwardPresenter;
 import ru.terrakok.cicerone.sample.mvp.bottom.forward.ForwardView;
@@ -36,9 +34,9 @@ public class ForwardFragment extends MvpAppCompatFragment implements ForwardView
     @ProvidePresenter
     ForwardPresenter provideForwardPresenter() {
         return new ForwardPresenter(
-                getArguments().getString(EXTRA_NAME),
-                ((RouterProvider) getParentFragment()).getRouter(),
-                getArguments().getInt(EXTRA_NUMBER)
+            getArguments().getString(EXTRA_NAME),
+            ((RouterProvider) getParentFragment()).getRouter(),
+            getArguments().getInt(EXTRA_NUMBER)
         );
     }
 

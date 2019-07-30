@@ -9,18 +9,16 @@ import ru.terrakok.cicerone.Screen;
 /**
  * Opens new screen.
  */
-public class Forward implements Command {
+public class Forward implements ScreenCommand {
+
     private Screen screen;
 
-    /**
-     * Creates a {@link Forward} navigation command.
-     *
-     * @param screen screen
-     */
-    public Forward(Screen screen) {
+    public Forward(final Screen screen) {
+        super();
         this.screen = screen;
     }
 
+    @Override
     public Screen getScreen() {
         return screen;
     }

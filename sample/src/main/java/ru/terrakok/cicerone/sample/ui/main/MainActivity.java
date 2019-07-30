@@ -1,19 +1,16 @@
 package ru.terrakok.cicerone.sample.ui.main;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import android.widget.TextView;
-
-import com.arellomobile.mvp.MvpAppCompatActivity;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
 import java.util.List;
 import javax.inject.Inject;
-
+import moxy.MvpAppCompatActivity;
 import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.android.support.SupportAppNavigator;
@@ -54,7 +51,7 @@ public class MainActivity extends MvpAppCompatActivity implements ChainHolder {
         screensSchemeTV = (TextView) findViewById(R.id.screens_scheme);
 
         if (savedInstanceState == null) {
-            navigator.applyCommands(new Command[]{new Replace(new Screens.SampleScreen(1))});
+            navigator.applyCommands(new Command[] { new Replace(new Screens.SampleScreen(1)) });
         } else {
             printScreensScheme();
         }
@@ -76,8 +73,8 @@ public class MainActivity extends MvpAppCompatActivity implements ChainHolder {
     public void onBackPressed() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.main_container);
         if (fragment != null
-                && fragment instanceof BackButtonListener
-                && ((BackButtonListener) fragment).onBackPressed()) {
+            && fragment instanceof BackButtonListener
+            && ((BackButtonListener) fragment).onBackPressed()) {
             return;
         } else {
             super.onBackPressed();
@@ -87,10 +84,10 @@ public class MainActivity extends MvpAppCompatActivity implements ChainHolder {
     private void printScreensScheme() {
         ArrayList<SampleFragment> fragments = new ArrayList<>();
         for (WeakReference<Fragment> fragmentReference : chain) {
-          Fragment fragment = fragmentReference.get();
-          if (fragment != null && fragment instanceof SampleFragment) {
-            fragments.add((SampleFragment) fragment);
-          }
+            Fragment fragment = fragmentReference.get();
+            if (fragment != null && fragment instanceof SampleFragment) {
+                fragments.add((SampleFragment) fragment);
+            }
         }
         Collections.sort(fragments, new Comparator<SampleFragment>() {
             @Override
